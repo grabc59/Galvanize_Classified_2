@@ -12,7 +12,6 @@
       const vm = this;
       
       vm.$onInit = function() {
-        console.log("ads-list controller start");
         vm.getAds();
         vm.toggleAdvertiseFormTracker = false;
       }
@@ -32,6 +31,25 @@
       vm.toggleAdvertiseForm = function(e) {
         vm.toggleAdvertiseFormTracker = !vm.toggleAdvertiseFormTracker;
         console.log(vm.toggleAdvertiseFormTracker);
+      }
+
+      vm.submitAd = function(ad) {
+        adsListService
+        .submitAd(ad)
+        .then(function() {
+          vm.toggleAdvertiseFormTracker = false;
+          delete vm.ad;
+          vm.getPosts();
+        })
+      }
+
+      vm.deleteAd = function(adId) {
+        console.log(adId)
+        adsListService
+        .deleteAd(adId)
+        .then(function() {
+          vm.getAds();
+        })
       }
 
 
