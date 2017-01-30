@@ -9,11 +9,16 @@
 
     $locationProvider.html5Mode(true);
 
-    // $stateProvider
-    // .state({
-    //   name: 'main',
-    //   url: '/',
-    //   component: 'ads',
-    // })
+    $stateProvider
+    .state({
+      name: 'adsList',
+      url: '/',
+      component: 'adsList',
+    })
+    .state({
+      name: 'editAd',
+      url: '/classifieds/:id/edit',
+      component: 'editAd',
+    })
   }
 }());

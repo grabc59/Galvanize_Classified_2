@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('app')
-        .service('adsService', adsService);
+        .service('adsListService', adsListService);
 
-    adsService.$inject = ['$http'];
+    adsListService.$inject = ['$http'];
 
-    function adsService($http) {
+    function adsListService($http) {
 
         this.getAds = getAds;
         this.submitAd = submitAd;
