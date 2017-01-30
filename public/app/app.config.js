@@ -17,7 +17,7 @@
     })
     .state({
       name: 'editAd',
-      url: '/classifieds/:id/edit',
+      url: '/ad/:id/edit',
       component: 'editAd',
     })
   }

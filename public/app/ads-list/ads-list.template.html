@@ -26,9 +26,9 @@
     </div>
 </form>
 
-<div ng-repeat="ad in $ctrl.ads track by $index" id={{$index}} ng-init="ad.toggleAdvertiseFormTracker=false">
+<div ng-repeat="ad in $ctrl.ads track by $index" id={{$index}} >
     <h2>{{ad.title}}</h1>
-    <a ui-sref="editAd({id:ad.id})"><button ng-click="$ctrl.toggleAdvertiseForm($event)">edit</button></a>
+    <a ui-sref="editAd({id:ad.id})"><button>edit</button></a>
     <p>Price: {{ad.price}}</p>
     <p>Description: {{ad.description}}</p>
     <p><img ng-src={{ad.item_image}} alt="item image"></p>

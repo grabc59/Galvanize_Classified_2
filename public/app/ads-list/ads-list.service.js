@@ -21,7 +21,7 @@
         }
 
         function getSpecificAd(adId) {
-            return $http.get('/classifieds' + adId)
+            return $http.get('/classifieds/' + adId)
                 .then(function(response) {
                     return response;
                 });
