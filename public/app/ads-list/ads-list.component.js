@@ -24,7 +24,6 @@
         .getAds()
         .then(function(ads) {
           vm.ads = ads;
-          console.log(vm.ads);
         });
       };
 

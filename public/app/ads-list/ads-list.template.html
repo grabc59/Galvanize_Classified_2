@@ -2,7 +2,20 @@
 
 <button id="newAdFormBtn" ng-click="$ctrl.toggleAdvertiseForm($event)" ng-init="vm.toggleAdvertiseFormTracker=false">Advertise</button>
 
-<form  name="$ctrl.adForm" ng-if="$ctrl.toggleAdvertiseFormTracker" novalidate ng-submit="$ctrl.submitAd($ctrl.ad)">
+
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active">
+            <input type="search" class="form-control input-sm search-form" placeholder="Filter" ng-model="$ctrl.searchText">
+        </li>
+        <label for="sortDropdown">Sort Ads by</label>
+        <select ng-model=$ctrl.sortCategory id="sortDropdown">
+            <option value="created_at">Date</option>
+            <option value="price">Price</option>
+        </select>
+    </ul>
+
+
+<form  name="$ctrl.adForm" ng-if="$ctrl.toggleAdvertiseFormTracker" novalidate ng-submit="$ctrl.submitAd($ctrl.ad)" >
     <div>
         <label for="title">Title</label>
         <input id="title" name="title" class="form-control" required ng-model="$ctrl.ad.title" ng-class="{'has-error': $ctrl.ad.title.$invalid && $ctrl.ad.title.$touched}">
@@ -26,7 +39,7 @@
     </div>
 </form>
 
-<div ng-repeat="ad in $ctrl.ads track by $index" id={{$index}} >
+    <div ng-repeat="ad in $ctrl.ads | filter : $ctrl.searchText | orderBy : $ctrl.sortCategory :true" id={{$index}} >
     <h2>{{ad.title}}</h1>
     <a ui-sref="editAd({id:ad.id})"><button>edit</button></a>
     <button ng-click="$ctrl.deleteAd(ad.id)">delete</button>
