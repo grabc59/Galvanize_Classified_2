@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <title>Galvanize Classified</title>
+
+    <!-- CSS LINKS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
 </head>
-<body>
-    
+<body ng-app="app">
+
+    <h1>index</h1>
+    <ui-view></ui-view>
+
+    <!-- JS LINKS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js" charset="utf-8"></script>
+    <script src="https://unpkg.com/angular-ui-router@1.0.0-beta.3/release/angular-ui-router.js"></script>
+    <script src="./app/app.module.js" charset="utf-8"></script>
+    <script src="./app/app.config.js"></script>
+    <script src="./app/show-posts/show-posts.component.js" charset="utf-8"></script>
 </body>
 </html>
