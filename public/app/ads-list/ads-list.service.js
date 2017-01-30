@@ -35,7 +35,7 @@
         }
 
       function patchAd(editAd) {
-        return $http.patch('/ad/' + editAd.id, editAd)
+        return $http.patch('/classifieds/' + editAd.id, editAd)
           .then(function(response) {
             return response;
           });

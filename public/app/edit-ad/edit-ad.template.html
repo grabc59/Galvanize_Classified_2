@@ -1,4 +1,4 @@
-<form  name="$ctrl.adForm" novalidate ng-submit="$ctrl.submitAd($ctrl.newAd)" >
+<form  name="$ctrl.adForm" novalidate ng-submit="$ctrl.submitAd($ctrl.ad)" >
     <div>
         <label for="title">Title</label>
         <input id="title" name="title" class="form-control" required ng-model="$ctrl.ad.title" ng-class="{'has-error': $ctrl.ad.title.$invalid && $ctrl.ad.title.$touched}">
@@ -16,8 +16,8 @@
         <input id="item_image" name="item_image" class="form-control" required ng-model="$ctrl.ad.item_image" ng-class="{'has-error': $ctrl.adForm.item_image.$invalid && $ctrl.adForm.item_image.$touched}">
     </div>
     <div class="form-group">
-        <button type="submit" class="btn btn-primary" ng-disabled="$ctrl.adForm.$invalid">
-        Create Ad
+        <button ng-submit="$ctrl.patchAd()" type="submit" class="btn btn-primary" ng-disabled="$ctrl.adForm.$invalid">
+        Submit
         </button>
     </div>
 </form>
