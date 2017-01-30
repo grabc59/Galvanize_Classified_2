@@ -14,6 +14,7 @@ const router = express.Router();
 router.get('/', function(req, res, next) {
   knex('classifieds')
   .select('id', 'title', 'description', 'price', 'item_image')
+  .orderBy('id')
   .then((result) => {
     res.send(result);
   })
